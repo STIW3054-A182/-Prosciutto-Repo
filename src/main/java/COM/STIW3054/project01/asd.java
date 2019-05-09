@@ -1,5 +1,5 @@
 package COM.STIW3054.project01;
 
-public class test {
+public class asd {
 
 }
