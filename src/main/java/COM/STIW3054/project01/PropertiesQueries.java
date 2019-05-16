@@ -23,6 +23,7 @@ public class PropertiesQueries {
         prop.setProperty("path",path);
         prop.setProperty("filename",filename);
 	}
+	
 	public void setState(String country) {
 		this.state = country;
         prop.setProperty("state",state);
