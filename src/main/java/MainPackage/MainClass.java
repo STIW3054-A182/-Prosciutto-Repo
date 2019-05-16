@@ -24,16 +24,18 @@ public class MainClass {
         chess.scanProcedure();
         
 		ChessURL [] curls = chess.getData();
+		
 		CheckURL [] url = new CheckURL [curls.length];
 		
 		for (int i = 0 ; i < chess.getData().length ; i++) {
-			url[i] = new CheckURL(curls[i]);
-			service.execute(url[i]);
+			System.out.println(curls[i].URLname());
+			System.out.println(curls[i].retiveURLContent());
 		}
 		
 		service.shutdown();
 		
 		
+	
 		
 		
 		
