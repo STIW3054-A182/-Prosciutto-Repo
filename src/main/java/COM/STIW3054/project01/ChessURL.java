@@ -63,18 +63,25 @@ public class ChessURL implements URLs {
 		                         + tds.get(8).text()+ " " + tds.get(9).text()+ " " 
 		                         + tds.get(10).text();
 		                 }
+		    	}else {
+		    		data = "URL DOESN'T HAVE CONTENT";
 		    	}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			return data;
 		}
-    	
-		return data;	
-    	
+		return "URL DOESN'T EXIST";
+		
 	}
 	@Override
 	public boolean ValidityURL() {
-		return false;
+		if (!this.data.equals("null")) {
+		    return false;
+		}
+		else {
+			return true;
+		}
 	}
 	
 	
