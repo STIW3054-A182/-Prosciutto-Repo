@@ -63,6 +63,7 @@ public class ChessURL implements URLs {
 		                         + tds.get(8).text()+ " " + tds.get(9).text()+ " " 
 		                         + tds.get(10).text();
 		                 }
+
 		    	}else {
 		    		data = "URL DOESN'T HAVE CONTENT";
 		    	}
@@ -72,7 +73,6 @@ public class ChessURL implements URLs {
 			return data;
 		}
 		return "URL DOESN'T EXIST";
-		
 	}
 	@Override
 	public boolean ValidityURL() {
@@ -104,7 +104,7 @@ public class ChessURL implements URLs {
 				e.printStackTrace();
 			}
 		}
-    	
+
     	return Title;
 	}
 	

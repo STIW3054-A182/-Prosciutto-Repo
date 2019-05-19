@@ -24,31 +24,22 @@ public class MainClass {
 		CaptureListChessURL chess = new CaptureListChessURL(reader);
 		
 		int coreCount = Runtime.getRuntime().availableProcessors();
-        ExecutorService service = Executors.newFixedThreadPool(coreCount); 
+   ExecutorService service = Executors.newFixedThreadPool(coreCount); 
 		
         
 		ChessURL [] curls = chess.getData();
-		
-		
+
 		LogURL file = new LogURL(new FileHandler("URL Not Exist.log" , true));
 		CheckURL [] url = new CheckURL [curls.length];	
-		
-		
-		
-//	for (int i = 0 ; i < chess.getData().length ; i++) {
-//			url[i] = new CheckURL(curls[i] , file);
-//			service.execute(url[i]);
-//		}
-		
-//		service.shutdown();
-		
-		
-		CountPoints points = new CountPoints(curls);
-		points.calculate();
 
-//		for (int i = 0 ; i < chess.getData().length ; i++) {
-//			System.out.println("\n"+curls[i].retiveURLContent());
-//		}
+		
+  	for (int i = 0 ; i < chess.getData().length ; i++) {
+			url[i] = new CheckURL(curls[i] , file);
+			service.execute(url[i]);
+    }
+		service.shutdown();
+		
+		
 		
 		
 		
