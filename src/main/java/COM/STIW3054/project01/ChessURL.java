@@ -27,16 +27,20 @@ public class ChessURL implements URLs {
 		HttpURLConnection.setFollowRedirects(false);
 	    HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
 	    con.setRequestMethod("HEAD");
-	    con.setConnectTimeout(1000);
-	    con.setReadTimeout(1000);
+	    con.setConnectTimeout(60000);
+	    con.setReadTimeout(60000);
 	    int responseCode = con.getResponseCode();
 	    if(responseCode== HttpURLConnection.HTTP_OK){
-		    return true;
+			return true;
+	    }else if (responseCode == HttpURLConnection.HTTP_CLIENT_TIMEOUT){
+	    	return false;
+	    }else {
+			return false;	
+
 	    }
 	    }catch (Exception e){		    	
 			return false;
 	    }
-		return false;	
 	}
 	
 	
@@ -59,18 +63,25 @@ public class ChessURL implements URLs {
 		                         + tds.get(8).text()+ " " + tds.get(9).text()+ " " 
 		                         + tds.get(10).text();
 		                 }
+
+		    	}else {
+		    		data = "URL DOESN'T HAVE CONTENT";
 		    	}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			return data;
 		}
-    
-		return data;	
-    	
+		return "URL DOESN'T EXIST";
 	}
 	@Override
 	public boolean ValidityURL() {
-		return false;
+		if (!this.data.equals("null")) {
+		    return false;
+		}
+		else {
+			return true;
+		}
 	}
 	
 	
@@ -93,7 +104,7 @@ public class ChessURL implements URLs {
 				e.printStackTrace();
 			}
 		}
-    	;
+
     	return Title;
 	}
 	
