@@ -13,6 +13,7 @@ public class CaptureListChessURL implements Scanning {
 	
 	public CaptureListChessURL (BufferedReader kumpulanurls) {
 		this.urls = kumpulanurls;
+		this.scanProcedure();
 	}
 	
 	@Override

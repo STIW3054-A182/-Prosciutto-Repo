@@ -27,16 +27,20 @@ public class ChessURL implements URLs {
 		HttpURLConnection.setFollowRedirects(false);
 	    HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
 	    con.setRequestMethod("HEAD");
-	    con.setConnectTimeout(1000);
-	    con.setReadTimeout(1000);
+	    con.setConnectTimeout(60000);
+	    con.setReadTimeout(60000);
 	    int responseCode = con.getResponseCode();
 	    if(responseCode== HttpURLConnection.HTTP_OK){
-		    return true;
+			return true;
+	    }else if (responseCode == HttpURLConnection.HTTP_CLIENT_TIMEOUT){
+	    	return false;
+	    }else {
+			return false;	
+
 	    }
 	    }catch (Exception e){		    	
 			return false;
 	    }
-		return false;	
 	}
 	
 	
@@ -47,23 +51,24 @@ public class ChessURL implements URLs {
 		if (this.CheckURL()) {
 			try {
 				this.doc = Jsoup.connect(url).get();
+				Elements des = doc.select(".CRs1");
+		    	Element titl = doc.selectFirst(".defaultDialog");
+		    	if (titl != null) {
+		    	data  = titl.text();
+		             for (Element row : des.select("tr")) {
+		                 Elements tds = row.select("td");
+		                 data += "\n"+tds.get(0).text() + " " + tds.get(1).text()+ " " 
+		                         + tds.get(2).text()+ " " + tds.get(3).text()+ " " + tds.get(4).text()  
+		                         + " " + tds.get(5).text()+ " " + tds.get(6).text()+ " " + tds.get(7).text()+ " " 
+		                         + tds.get(8).text()+ " " + tds.get(9).text()+ " " 
+		                         + tds.get(10).text();
+		                 }
+		    	}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-    	Elements des = doc.select(".CRs1");
-    	Element titl = doc.selectFirst(".defaultDialog");
-    	if (titl != null) {
-    	data  = titl.text();
-             for (Element row : des.select("tr")) {
-                 Elements tds = row.select("td");
-                 data += "\n"+tds.get(0).text() + " " + tds.get(1).text()+ " " 
-                         + tds.get(2).text()+ " " + tds.get(3).text()+ " " + tds.get(4).text()  
-                         + " " + tds.get(5).text()+ " " + tds.get(6).text()+ " " + tds.get(7).text()+ " " 
-                         + tds.get(8).text()+ " " + tds.get(9).text()+ " " 
-                         + tds.get(10).text();
-                 }
-    	}
+    	
 		return data;	
     	
 	}
@@ -86,12 +91,13 @@ public class ChessURL implements URLs {
 		if (this.CheckURL()) {
 			try {
 				this.doc = Jsoup.connect(url).get();
+				Element des = doc.selectFirst(".defaultDialog");
+				Title = des.text();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-    	Element des = doc.selectFirst(".defaultDialog");
-		Title = des.text();
+    	
     	return Title;
 	}
 	
