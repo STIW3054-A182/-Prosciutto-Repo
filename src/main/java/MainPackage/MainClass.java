@@ -18,13 +18,14 @@ public class MainClass {
 
 	public static void main( String[] args ) throws IOException{
 
-		PropertiesQueries prop = new PropertiesQueries("URL(2).txt","C:\\Users\\trina\\Desktop\\URL(2).txt");		
+		PropertiesQueries prop = new PropertiesQueries("URL(2).txt","C:\\Users\\trina\\Desktop\\URL(2).txt");
+		
 		BufferedReader reader = new BufferedReader(new FileReader(prop.getPath()));
 
 		CaptureListChessURL chess = new CaptureListChessURL(reader);
 		
 		int coreCount = Runtime.getRuntime().availableProcessors();
-   ExecutorService service = Executors.newFixedThreadPool(coreCount); 
+		ExecutorService service = Executors.newFixedThreadPool(coreCount); 
 		
         
 		ChessURL [] curls = chess.getData();
@@ -33,12 +34,12 @@ public class MainClass {
 		CheckURL [] url = new CheckURL [curls.length];	
 
 		
-  	for (int i = 0 ; i < chess.getData().length ; i++) {
-			url[i] = new CheckURL(curls[i] , file);
-			service.execute(url[i]);
-    }
-		service.shutdown();
+  	
 		
+		for (int i = 0 ; i < chess.getData().length ; i++) {
+	  		TopThreeFetcher top = new TopThreeFetcher(curls[i].URLname(),prop.getState());
+	  		top.getTop();	
+}
 		
 		
 		

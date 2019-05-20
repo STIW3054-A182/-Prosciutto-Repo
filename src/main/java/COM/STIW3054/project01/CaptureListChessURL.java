@@ -32,6 +32,9 @@ public class CaptureListChessURL implements Scanning {
 		 return n;
 	}
 	
+	
+	
+	
 
 	
 	
