@@ -17,7 +17,7 @@ public class CheckURL implements Runnable {
 		this.buff = bw;
 	}
 
-	@Override
+	
 	public void run() {
 		// TODO Auto-generated method stub
 		

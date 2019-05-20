@@ -18,7 +18,7 @@ public class MainClass {
 
 	public static void main( String[] args ) throws IOException{
 
-		PropertiesQueries prop = new PropertiesQueries("URL.txt","C:\\Users\\HP-PC\\Desktop\\URL.txt");		
+		PropertiesQueries prop = new PropertiesQueries("URL(2).txt","C:\\Users\\trina\\Desktop\\URL(2).txt");		
 		BufferedReader reader = new BufferedReader(new FileReader(prop.getPath()));
 
 		CaptureListChessURL chess = new CaptureListChessURL(reader);
