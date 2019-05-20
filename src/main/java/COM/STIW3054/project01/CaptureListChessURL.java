@@ -13,9 +13,9 @@ public class CaptureListChessURL implements Scanning {
 	
 	public CaptureListChessURL (BufferedReader kumpulanurls) {
 		this.urls = kumpulanurls;
+		this.scanProcedure();
 	}
 	
-	@Override
 	public void scanProcedure() {
 		// TODO Auto-generated method stub
 		url = urls.lines().collect(Collectors.joining("\n"));

@@ -21,7 +21,6 @@ public class ChessURL implements URLs {
 	
 	//Check URL see if its exist 
 	
-	@Override
 	public boolean CheckURL() {
 		try {
 		HttpURLConnection.setFollowRedirects(false);
@@ -42,7 +41,6 @@ public class ChessURL implements URLs {
 	
 	//retrive the content of the url , if there isnt any it will return null
 	
-	@Override
 	public String retiveURLContent() {
 		if (this.CheckURL()) {
 			try {
@@ -67,7 +65,6 @@ public class ChessURL implements URLs {
 		return data;	
     	
 	}
-	@Override
 	public boolean ValidityURL() {
 		return false;
 	}
@@ -75,7 +72,6 @@ public class ChessURL implements URLs {
 	
 	//return name of the url 
 	
-	@Override
 	public String URLname() {
 		return url;
 	}

@@ -10,7 +10,6 @@ public class CheckURL implements Runnable {
 		this.url = url;
 	}
 
-	@Override
 	public void run() {
 		// TODO Auto-generated method stub
 		if (url.CheckURL()) {
