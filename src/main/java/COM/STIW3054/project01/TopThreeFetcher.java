@@ -11,15 +11,22 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.util.Properties;
-
-
 import org.jsoup.Jsoup;
+
+/**
+ * @author Dinantio Trinanda
+ * @version 1.0
+ * @since 2019-05-20
+ * 
+ */
 
 public class TopThreeFetcher {
 	private String url;
 	Document doc; 
 	String data;
-	static String category2 = "U8";
+	static int z = 0;
+	static boolean data1 = true;
+	static String[] category2 = {"U8","U10","U16","U18","","U8G","U10G","U16G","U18G","U20"};
 
 	public TopThreeFetcher(String URL,String state)  {
 		this.url = URL;
@@ -37,7 +44,14 @@ public class TopThreeFetcher {
 		    	Elements rows = des.select("tr");
 		    	if (titl != null) {
 		    	//data  = titl.text();
+		    		if(category2[z].equals("U8G")) {
+		    			System.out.println("U8G");
+		    		}
+		    		else {
+		    			System.out.println("Top 3 for " + category2[z]);
+		    		}
 		    	for (int i = 1; i < rows.size(); i++) { //first row is the col names so skip it.
+		    		 
 		    	    Element row = rows.get(i);
 		    	    Elements cols = row.select("td");
 	                final String rk = row.select("td:nth-of-type(1)").text();
@@ -46,24 +60,31 @@ public class TopThreeFetcher {
 	                final String rtg = row.select("td:nth-of-type(6)").text();
 	                final String state = row.select("td:nth-of-type(7)").text();
 	                final String pointer = row.select("td:nth-of-type(8)").text();
-	                System.out.println("Top 3 for " + category2);
+	                
 
 	                if (rk.equals("1") ||rk.equals("2")|| rk.equals("3")) {
-	                	category2 = category; 
+	                	
 	                    String format = "| %-5s | %-5s | %-35s| %-8s| %-8s| %-8s| %-8s|\n";
 	                    System.out.format(format, rk, sno, name, rtg, state, pointer,category);
-	                    
+	                    z++;
 	                }
 	                
 		    	}
+		    	z -= 2;
 		    	System.out.format("\n");
+		    	
+		    	
 
 		    	}else {
 		    		data = "URL DOESN'T HAVE CONTENT";
+		    		
 		    	}
-			} catch (IOException uk) {
-				System.out.println("No Data\n");
+		    	} catch (IOException uk) {
+				System.out.print("");
+				z = 5;
+				
 			}
+			
 			return data;
 	}
 	
