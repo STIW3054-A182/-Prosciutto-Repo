@@ -26,26 +26,29 @@ public class TopThreeFetcher {
 	String data;
 	static int z = 0;
 	static boolean data1 = true;
-	static String[] category2 = {"U8","U10","U16","U18","","U8G","U10G","U16G","U18G","U20"};
+	static String[] category2 = {"U8","U10","U16","U18","","UxG","U8G","U10G","U16G","U18G","U20"};
 
 	public TopThreeFetcher(String URL,String state)  {
 		this.url = URL;
 	}
 	
 	public String getTop() throws UnknownHostException {
-			try {
+			
+		try {
 				this.doc = Jsoup.connect(url).get();
 				Elements des = doc.select(".CRs1");
-//		        PropertiesQueries obj = new PropertiesQueries(data, data);
 		    	Element titl = doc.selectFirst(".defaultDialog");
 		    	String title = doc.title();
 		        int scrape = title.indexOf("9");
 	            String category = title.substring(scrape + 1).replace("(", "").replace(")", "");
 		    	Elements rows = des.select("tr");
+		    	
 		    	if (titl != null) {
-		    	//data  = titl.text();
-		    		if(category2[z].equals("U8G")) {
-		    			System.out.println("U8G");
+		    	
+		    		if(category2[z].equals("UxG")) {
+		    			System.out.println();
+		    			z++;
+		    			
 		    		}
 		    		else {
 		    			System.out.println("Top 3 for " + category2[z]);
@@ -77,6 +80,7 @@ public class TopThreeFetcher {
 
 		    	}else {
 		    		data = "URL DOESN'T HAVE CONTENT";
+		    		
 		    		
 		    	}
 		    	} catch (IOException uk) {
