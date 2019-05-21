@@ -43,6 +43,8 @@ public class TopThreeFetcher {
 	            String category = title.substring(scrape + 1).replace("(", "").replace(")", "");
 		    	Elements rows = des.select("tr");
 		    	
+		    	 
+		    	
 		    	if (titl != null) {
 		    	
 		    		if(category2[z].equals("UxG")) {
@@ -67,7 +69,7 @@ public class TopThreeFetcher {
 
 	                if (rk.equals("1") ||rk.equals("2")|| rk.equals("3")) {
 	                	
-	                    String format = "| %-5s | %-5s | %-35s| %-8s| %-8s| %-8s| %-8s|\n";
+	                    String format = "| %-5s | %-5s | %-35s| %-8s| %-20s| %-8s| %-8s|\n";
 	                    System.out.format(format, rk, sno, name, rtg, state, pointer,category);
 	                    z++;
 	                }
