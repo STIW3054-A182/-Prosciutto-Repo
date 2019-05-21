@@ -1,5 +1,4 @@
 package COM.STIW3054.project01;
-
 import java.io.IOException;
 import java.net.UnknownHostException;
 
@@ -14,11 +13,12 @@ import org.jsoup.select.Elements;
  * 
  */
 public class GetName {
-	private String url;
+	private String url, name2;
 	Document doc; 
 	String data;
 	public GetName(String URL,String name)  {
 		this.url = URL;
+		this.name2 = name;
 	}
 	public String getPlayerName() throws UnknownHostException {
 		try {
@@ -42,7 +42,8 @@ public class GetName {
                 final String state = row.select("td:nth-of-type(7)").text();
                 final String pointer = row.select("td:nth-of-type(8)").text();
 
-                if (name.equals("Rosli Iman Hasif")) {
+                if (name.equals(name2)) {
+                	System.out.println("\n");
                     String format = "| %-5s | %-5s | %-35s| %-8s| %-8s| %-8s| %-8s|\n";
                     System.out.format(format, rk, sno, name, rtg, state, pointer,category);
                 }
@@ -52,7 +53,7 @@ public class GetName {
 	    		data = "URL DOESN'T HAVE CONTENT";
 	    	}
 		} catch (IOException uk) {
-			System.out.println("Timed Out!");
+			System.out.println("");
 		}
 		return data;
 }

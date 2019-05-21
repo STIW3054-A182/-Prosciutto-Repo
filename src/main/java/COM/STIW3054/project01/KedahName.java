@@ -1,5 +1,4 @@
 package COM.STIW3054.project01;
-
 import java.io.IOException;
 import java.net.UnknownHostException;
 
@@ -19,12 +18,13 @@ import java.util.Properties;
  */
 
 public class KedahName {
-	private String url;
+	private String url, state2;
 	Document doc; 
 	String data;
 
 	public KedahName(String URL,String state)  {
 		this.url = URL;
+		this.state2 = state;
 	}
 	
 	public String getkedah() throws UnknownHostException {
@@ -49,7 +49,7 @@ public class KedahName {
 	                final String state = row.select("td:nth-of-type(7)").text();
 	                final String pointer = row.select("td:nth-of-type(8)").text();
 
-	                if (state.equals("KEDAH")) {
+	                if (state.equals(state2)) {
 	                    String format = "| %-5s | %-5s | %-35s| %-8s| %-8s| %-8s| %-8s|\n";
 	                    System.out.format(format, rk, sno, name, rtg, state, pointer,category);
 	                }
@@ -59,10 +59,9 @@ public class KedahName {
 		    		data = "URL DOESN'T HAVE CONTENT";
 		    	}
 			} catch (IOException uk) {
-				System.out.println("Timed Out!");
+				System.out.print("");
 			}
 			return data;
 	}
 	
-	}
-	
+}

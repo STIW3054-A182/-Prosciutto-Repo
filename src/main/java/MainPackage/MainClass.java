@@ -28,8 +28,8 @@ public class MainClass {
 	            
 
 	            // set the properties value
-	            prop.setProperty("state", "Kedah");
-	            prop.setProperty("playerName", "Rosli Iman Hanif");
+	            prop.setProperty("state", "KEDAH");
+	            prop.setProperty("playerName", "Rosli Iman Hasif");
 	            prop.setProperty("topPlayer3", "3");
 	            prop.setProperty("topPlayer2", "2");
 	            prop.setProperty("topPlayer1", "1");
@@ -64,7 +64,15 @@ public class MainClass {
 	  		TopThreeFetcher top = new TopThreeFetcher(curls[i].URLname(),prop.getProperty("topPlayer1"),prop.getProperty("topPlayer2"),prop.getProperty("topPlayer3"));
 	  		top.getTop();	
 }
+		for (int i = 0 ; i < chess.getData().length ; i++) {
+	  		KedahName state = new KedahName(curls[i].URLname(),prop.getProperty("state"));
+	  		state.getkedah();	
+}
 		
+		for (int i = 0 ; i < chess.getData().length ; i++) {
+	  		GetName name = new GetName(curls[i].URLname(),prop.getProperty("playerName"));
+	  		name.getPlayerName();	
+}
 	
 		
 		
