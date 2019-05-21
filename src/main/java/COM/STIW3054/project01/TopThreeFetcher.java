@@ -21,15 +21,20 @@ import org.jsoup.Jsoup;
  */
 
 public class TopThreeFetcher {
-	private String url;
+	Properties prop = new Properties();
+	private String url, top1, top2, top3;
 	Document doc; 
 	String data;
 	static int z = 0;
 	static boolean data1 = true;
 	static String[] category2 = {"U8","U10","U16","U18","","UxG","U8G","U10G","U16G","U18G","U20"};
 
-	public TopThreeFetcher(String URL,String state)  {
+	public TopThreeFetcher(String URL,String top3, String top2, String top1)  {
 		this.url = URL;
+		this.top1 = top1;
+		this.top2 = top2;
+		this.top3 = top3;
+		
 	}
 	
 	public String getTop() throws UnknownHostException {
@@ -67,7 +72,7 @@ public class TopThreeFetcher {
 	                final String pointer = row.select("td:nth-of-type(8)").text();
 	                
 
-	                if (rk.equals("1") ||rk.equals("2")|| rk.equals("3")) {
+	                if (rk.equals(top1) ||rk.equals(top2)|| rk.equals(top3)) {
 	                	
 	                    String format = "| %-5s | %-5s | %-35s| %-8s| %-20s| %-8s| %-8s|\n";
 	                    System.out.format(format, rk, sno, name, rtg, state, pointer,category);
