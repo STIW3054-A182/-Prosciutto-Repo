@@ -7,7 +7,7 @@
 | Dinantio Trinanda     | 243799 |
 | Kirana Raihan Widia   | 243835 |
 | Andriyanto Alif Mirza | 243803 |
-|                       |        |
+| Francisca Frederick   | 253104 |
 
 ## Introduction
 
