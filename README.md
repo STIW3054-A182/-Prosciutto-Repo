@@ -11,9 +11,7 @@
 
 ## Introduction
 
-This is our project of STIW3034 
-
-we are required to build a system that can retrive URL and analyze the content of many URL which are the result table of chess competition 
+This is a system to retrieve URL and analyse the contents of many URl which are the result from a table of chess competition 
 
 you can check the list of URL we have to analyze [here](https://github.com/STIW3054-A182/Assignments/wiki/Group-Project)
 
