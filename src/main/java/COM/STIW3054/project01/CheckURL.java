@@ -11,6 +11,7 @@ public class CheckURL implements Runnable {
 		this.url = url;
 	}
 
+
 	public CheckURL(ChessURL chessURL, LogURL bw) {
 		// TODO Auto-generated constructor stub
 		this.url = chessURL;
