@@ -19,23 +19,26 @@ public class MainClass {
 
 	public static void main( String[] args ) throws IOException{
 
+
 		PropertiesQueries prop = new PropertiesQueries("url.txt","C:\\Users\\beemo\\Documents\\-Prosciutto-Repo\\src\\main\\java\\MainPackage\\url.txt"
 				+ "");		
 		BufferedReader reader = new BufferedReader(new FileReader(prop.getPath()));
 		//prop.setState("KEDAH");
+
 		CaptureListChessURL chess = new CaptureListChessURL(reader);
 		
 		int coreCount = Runtime.getRuntime().availableProcessors();
-   ExecutorService service = Executors.newFixedThreadPool(coreCount); 
+    ExecutorService service = Executors.newFixedThreadPool(coreCount); 
 		
-   		ArrayList<Player> players = new ArrayList<Player>();
+   	ArrayList<Player> players = new ArrayList<Player>();
 		ChessURL [] curls = chess.getData();
 		//KedahName[] kedah = null ;
 		//int grandtotal =0;
+
 		LogURL file = new LogURL(new FileHandler("URL Not Exist.log" , true));
 		CheckURL [] url = new CheckURL [curls.length];	
 
-		
+
 //for (int i = 0 ; i < chess.getData().length ; i++) {
 //		url[i] = new CheckURL(curls[i] , file);
 //		service.execute(url[i]);
@@ -66,7 +69,13 @@ public class MainClass {
 	  	//System.out.println("grandtotal= "+grandtotal);
 	  	  	
 
-//System.out.println(prop.getState());
+    //System.out.println(prop.getState());
+
+
+  	for (int i = 0 ; i < chess.getData().length ; i++) {
+			url[i] = new CheckURL(curls[i] , file);
+			service.execute(url[i]);
+    }
 
 		service.shutdown();
 		
