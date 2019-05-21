@@ -1,5 +1,5 @@
-package COM.STIW3054.project01;
 
+package COM.STIW3054.project01;
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -26,3 +26,4 @@ public class LogURL {
 	}
 
 }
+
