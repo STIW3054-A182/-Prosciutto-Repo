@@ -1,5 +1,11 @@
 package COM.STIW3054.project01;
-
+/**
+ * @author Arya Muhammad Bimo
+ * @version 1.0
+ * @since 2019-05-18
+ * Player model class
+ * 
+ */
 public class Player {
 	String state;
 	String category;

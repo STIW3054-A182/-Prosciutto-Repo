@@ -8,10 +8,12 @@ import java.util.ArrayList;
  * @author Arya Muhammad Bimo
  * @version 1.0
  * @since 2019-05-18
+ * Count the total players for each state.
+   Count all the players.
  * 
  */
 
-public class ShowStatistics {
+public class ShowStatistics implements Runnable {
 	private String url;
 	String data;
 	Document doc; 
@@ -23,6 +25,10 @@ public class ShowStatistics {
 		this.players = players;
 	}
 	
+	
+	/**
+	 *  runs the application 
+	 */
 	public void run() {
 		grandtotal+=count("KUALA LUMPUR");
 		grandtotal+=count("N.SEMBILAN");
@@ -42,7 +48,11 @@ public class ShowStatistics {
         System.out.format(format,"Grand Total",grandtotal);
 	}
 	//public 
-
+	
+	/**
+	 * @param state states the state that is being searched
+	 * @return total for the grandtotal to calculate
+	 */
 	public int count(String state){
 		int total = 0;
 		String category = "";
@@ -60,15 +70,5 @@ public class ShowStatistics {
             System.out.format(format,state, total);
     	}
     	return total;
-	}
-	
-	
-	
-	
-	public void countGrandTotal(){
-		
-	}
-
-	
 	}
 	

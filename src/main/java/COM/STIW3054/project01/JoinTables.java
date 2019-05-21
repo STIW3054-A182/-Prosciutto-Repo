@@ -10,6 +10,14 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+/**
+ * @author Arya Muhammad Bimo
+ * @version 1.0
+ * @since 2019-05-18
+ * Grab all the sites and joining it into one array of objects
+ * 
+ */
+
 public class JoinTables {
 	private String url;
 	Document doc; 
