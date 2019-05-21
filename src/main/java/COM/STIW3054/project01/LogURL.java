@@ -6,6 +6,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/**
+ * 
+ * this class provide creating Log file whenever theres invalid link in CheckURL
+ * @author Raihankirana 243835
+ * 
+ *
+ */
 public class LogURL {
 	
 	Logger LOGGER = Logger.getLogger(LogURL.class.getName());

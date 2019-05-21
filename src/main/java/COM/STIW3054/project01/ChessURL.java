@@ -9,20 +9,46 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+/**
+ * 
+ * This class provide url as object , each object contatin one url link and can retrive the content
+ * @author Raihankirana 243835
+ * @category URL
+ *
+ */
 public class ChessURL implements URLs {
 
+	/**
+	 * url link
+	 */
 	String url;
+	/**
+	 * document retrived from link
+	 */
 	Document doc; 
+	/**
+	 * data fetch from the content of the website
+	 */
 	String data;
+	/**
+	 * the title 
+	 */
 	String Title;
 	
+	/**
+	 * @param URL create Object of ChessURL based on link URL given 
+	 */
 	public ChessURL(String URL)  {
 		this.url = URL;
 	}
 	
 	//Check URL see if its exist 
 	
-	@Override
+	/* (non-Javadoc)
+	 * 
+	 * check if the url exist
+	 * @see COM.STIW3054.project01.URLs#CheckURL()
+	 */
 	public boolean CheckURL() {
 		try {
 		HttpURLConnection.setFollowRedirects(false);
@@ -47,6 +73,11 @@ public class ChessURL implements URLs {
 	
 	//retrive the content of the url , if there isnt any it will return null
 	
+	/* (non-Javadoc)
+	 * 
+	 * retrive the URL content 
+	 * @see COM.STIW3054.project01.URLs#retiveURLContent()
+	 */
 	@Override
 	public String retiveURLContent() {
 		if (this.CheckURL()) {
@@ -75,6 +106,10 @@ public class ChessURL implements URLs {
 		}
 		return "URL DOESN'T EXIST";
 	}
+	/* (non-Javadoc)
+	 * check to see if the url valid or not 
+	 * @see COM.STIW3054.project01.URLs#ValidityURL()
+	 */
 	@Override
 	public boolean ValidityURL() {
 		if (!this.data.equals("null")) {
@@ -88,6 +123,11 @@ public class ChessURL implements URLs {
 	
 	//return name of the url 
 	
+	/* (non-Javadoc)
+	 * 
+	 * return url link in string
+	 * @see COM.STIW3054.project01.URLs#URLname()
+	 */
 	@Override
 	public String URLname() {
 		return url;
@@ -95,6 +135,9 @@ public class ChessURL implements URLs {
 	
 	//return the table title
 	
+	/**
+	 * @return string of title table inside the link 
+	 */
 	public String retriveTableTitle() {
 		if (this.CheckURL()) {
 			try {
