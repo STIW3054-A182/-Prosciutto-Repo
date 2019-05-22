@@ -33,11 +33,17 @@ public class MainClass {
 	public static void main(String[] args) throws IOException {
 		
 	    Thread currThread = Thread.currentThread();
-
+		file = new LogURL(new FileHandler("URLdoesntcontainplayers.log", true));
 		SetProperties();
 		Retrivedata();
         System.out.println("-----------------------------------------------------------------------------------------------------");
-		CheckkingURL();
+		
+        TotalPlayers m = new TotalPlayers (curls , file);
+        m.calculate();
+        
+        /*
+        
+        CheckkingURL();
         System.out.println("-----------------------------------------------------------------------------------------------------");
 		CountPlayer();
         System.out.println("-----------------------------------------------------------------------------------------------------");
@@ -51,6 +57,7 @@ public class MainClass {
 		winningpoints();
         System.out.println("-----------------------------------------------------------------------------------------------------");
 		PlayerResult();
+		*/
 
 	}
 
