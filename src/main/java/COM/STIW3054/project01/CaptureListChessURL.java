@@ -34,6 +34,7 @@ public class CaptureListChessURL implements Scanning {
 		this.scanProcedure();
 	}
 	
+
 	/* (non-Javadoc)
 	 * 
 	 * scanned from here 
@@ -56,6 +57,9 @@ public class CaptureListChessURL implements Scanning {
 		 
 		 return n;
 	}
+	
+	
+	
 	
 
 	

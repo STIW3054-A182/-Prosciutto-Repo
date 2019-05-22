@@ -1,4 +1,3 @@
-
 package COM.STIW3054.project01;
 
 import java.io.IOException;
@@ -44,11 +43,13 @@ public class ChessURL implements URLs {
 	
 	//Check URL see if its exist 
 	
+
 	/* (non-Javadoc)
 	 * 
 	 * check if the url exist
 	 * @see COM.STIW3054.project01.URLs#CheckURL()
 	 */
+
 	public boolean CheckURL() {
 		try {
 		HttpURLConnection.setFollowRedirects(false);
@@ -73,6 +74,7 @@ public class ChessURL implements URLs {
 	
 	//retrive the content of the url , if there isnt any it will return null
 	
+
 	/* (non-Javadoc)
 	 * 
 	 * retrive the URL content 
@@ -106,6 +108,7 @@ public class ChessURL implements URLs {
 		}
 		return "URL DOESN'T EXIST";
 	}
+
 	/* (non-Javadoc)
 	 * check to see if the url valid or not 
 	 * @see COM.STIW3054.project01.URLs#ValidityURL()
@@ -123,6 +126,7 @@ public class ChessURL implements URLs {
 	
 	//return name of the url 
 	
+
 	/* (non-Javadoc)
 	 * 
 	 * return url link in string
