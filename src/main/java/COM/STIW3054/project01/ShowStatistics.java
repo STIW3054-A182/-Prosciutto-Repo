@@ -71,4 +71,5 @@ public class ShowStatistics implements Runnable {
     	}
     	return total;
 	}
+}
 	

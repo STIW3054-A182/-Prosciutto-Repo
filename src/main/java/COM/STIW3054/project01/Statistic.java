@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 /**
  * 
- * this class provide the implementation of counting points from array of
+ * this class provide the implementation of counting people from array of
  * ChessURL and calcualte based on the country and category
  * 
  * @author Raihankirana 243835
@@ -18,19 +18,19 @@ import java.util.regex.Pattern;
  * @category CountingPoints
  *
  */
-public class CountPoints {
+public class Statistic {
 
 	ChessURL[] url;
-	double points = 0;
-	double pointsPerState = 0;
-	double pointsTotal = 0;
+	int points = 0;
+	int pointsPerState = 0;
+	int pointsTotal = 0;
 	String[] cation;
 	int i;
 	int p;
 	/**
 	 * @param url Create CountPoints Based on Array of ChessURL
 	 */
-	public CountPoints(ChessURL[] url) {
+	public Statistic(ChessURL[] url) {
 		this.url = url;
 	}
 
@@ -55,7 +55,7 @@ public class CountPoints {
 
 		String format = "| %-13s| %-9s| %-8s|\n";
 
-		System.out.println("-----------Counting Points----------");
+		System.out.println("-----------Counting Statistic-------");
 		System.out.println("please wait , calculating states ...");
 
 		for (int g = 0; g < url.length; g++) {
@@ -73,7 +73,7 @@ public class CountPoints {
 		System.out.println("Total Of State : " + cation.length);
 
 		System.out.println("------------------------------------");
-		System.out.format(format, "State", "Category", "Pts");
+		System.out.format(format, "State", "Category", "Total");
 		System.out.println("|--------------|----------|---------|");
         
 		for ( p = 1; p < cation.length; p++) {
@@ -90,15 +90,15 @@ public class CountPoints {
 					       String catetemp = m4.group().trim(); 
 						   while (m5.find()) {
 							   if (cation[p].equals(m5.group(2).trim())) {
-								 points += Double.parseDouble(m5.group(3).trim().replace(",","."));
-								 pointsPerState += Double.parseDouble(m5.group(3).trim().replace(",","."));
-								 pointsTotal += Double.parseDouble(m5.group(3).trim().replace(",","."));
+								 points++;
+								 pointsPerState++;
+								 pointsTotal++;
 							   }
 
 					    	}
 
 						   
-						   if( !(points == 0.0)) {
+						   if( !(points == 0)) {
 								System.out.format(format, cation[p], catetemp,points);
 
 						   }   

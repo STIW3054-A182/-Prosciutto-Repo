@@ -80,7 +80,6 @@ public class ChessURL implements URLs {
 	 * retrive the URL content 
 	 * @see COM.STIW3054.project01.URLs#retiveURLContent()
 	 */
-	@Override
 	public String retiveURLContent() {
 		if (this.CheckURL()) {
 			try {
@@ -113,7 +112,6 @@ public class ChessURL implements URLs {
 	 * check to see if the url valid or not 
 	 * @see COM.STIW3054.project01.URLs#ValidityURL()
 	 */
-	@Override
 	public boolean ValidityURL() {
 		if (!this.data.equals("null")) {
 		    return false;
@@ -132,7 +130,6 @@ public class ChessURL implements URLs {
 	 * return url link in string
 	 * @see COM.STIW3054.project01.URLs#URLname()
 	 */
-	@Override
 	public String URLname() {
 		return url;
 	}
