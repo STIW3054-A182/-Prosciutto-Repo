@@ -33,7 +33,7 @@ public class MainClass {
 	public static void main(String[] args) throws IOException {
 		
 	    Thread currThread = Thread.currentThread();
-		file = new LogURL(new FileHandler("URLdoesntcontainplayers.log", true));
+		file = new LogURL(new FileHandler("URLdoesntcontainplayers.log",true));
 		SetProperties();
 		Retrivedata();
         System.out.println("-----------------------------------------------------------------------------------------------------");
@@ -44,7 +44,7 @@ public class MainClass {
         /*
         
         CheckkingURL();
-        System.out.println("-----------------------------------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------------------------------------");
 		CountPlayer();
         System.out.println("-----------------------------------------------------------------------------------------------------");
 		jointables();
@@ -203,7 +203,7 @@ public class MainClass {
 	 */
 	public static void PlayerResult() throws UnknownHostException {
 		for (int i = 0; i < chess.getData().length; i++) {
-			GetName name = new GetName(curls[i].URLname(), prop.getProperty("playerName"));
+			GetName name = new GetName(curls[i].URLname(),prop.getProperty("playerName"));
 			name.getPlayerName();
 		}
 
