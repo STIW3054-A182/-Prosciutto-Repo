@@ -135,7 +135,7 @@ public class MainClass{
 	 */
 	public static void showStatistic() {
 		System.out.printf("| %-12s | %-5s |\n", "State", "Total");
-		System.out.printf("| %-12s | %-5s |\n", "------------", "-----");
+		System.out.printf("| %-12s | %-5s |\n" , "------------", "-----");
 		// for (int i = 0 ; i < chess.getData().length ; i++) {
 		ShowStatistics stat = new ShowStatistics(players);
 		stat.run();
