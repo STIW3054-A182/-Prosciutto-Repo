@@ -12,7 +12,7 @@ public class Player {
 	int total;
 
 
-	public void setTotal(int total ) {
+	public void setTotal(int total) {
 		this.total = total;
 	}
 
