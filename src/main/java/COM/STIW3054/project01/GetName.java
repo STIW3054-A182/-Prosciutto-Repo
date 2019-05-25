@@ -50,7 +50,7 @@ public class GetName {
 	    	}
 
 	    	}else {
-	    		data = "URL DOESN'T HAVE CONTENT";
+	    		data = "URL DOESN'T HAVE CONTENT.";
 	    	}
 		} catch (IOException uk) {
 			System.out.println("");
