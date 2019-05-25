@@ -21,7 +21,7 @@ import COM.STIW3054.project01.*;
 
  *
  */
-public class MainClass {
+public class MainClass{
 
 	private static Properties prop = new Properties();
 	private static ChessURL[] curls;
