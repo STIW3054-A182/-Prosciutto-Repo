@@ -1,4 +1,4 @@
-package COM.STIW3054.project01;
+package COM.STIW3054.project01;=
 /**
  * @author Arya Muhammad Bimo
  * @version 1.0
