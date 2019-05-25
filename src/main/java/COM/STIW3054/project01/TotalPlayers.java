@@ -34,7 +34,7 @@ public class TotalPlayers {
 					grandroral++;
 				}
 				if (!(total == 0.0)) {
-					System.out.format(format, location, total);
+					System.out.format(format, location,total);
 
 				} else {
 					buff.WriteLog(url[g].URLname());
