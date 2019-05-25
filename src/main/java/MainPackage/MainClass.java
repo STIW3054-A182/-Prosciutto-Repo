@@ -74,7 +74,7 @@ public class MainClass {
 			prop.setProperty("topPlayer2", "2");
 			prop.setProperty("topPlayer1", "1");
 			prop.setProperty("path",
-					"E:\\Project GITHUB\\-Prosciutto-Repo-master\\src\\main\\java\\MainPackage\\url.txt");
+					"src/main/java/MainPackage/url.txt");
 
 			// save properties to project root folder
 			prop.store(output, null);
