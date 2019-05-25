@@ -38,7 +38,7 @@ public class MainClass{
 		Retrivedata();
         System.out.println("-----------------------------------------------------------------------------------------------------");
 		
-        TotalPlayers m = new TotalPlayers (curls , file);
+        TotalPlayers m = new TotalPlayers (curls ,file);
         m.calculate();
         
         /*
