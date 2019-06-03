@@ -32,32 +32,22 @@ public class MainClass{
 
 	public static void main(String[] args) throws IOException {
 		
-	    Thread currThread = Thread.currentThread();
-		file = new LogURL(new FileHandler("URLdoesntcontainplayers.log",true));
-		SetProperties();
-		Retrivedata();
+	Thread currThread = Thread.currentThread();
+        file = new LogURL(new FileHandler("URLdoesntcontainplayers.log",true));
+        SetProperties();
+        Retrivedata();
         System.out.println("-----------------------------------------------------------------------------------------------------");
-		
         TotalPlayers m = new TotalPlayers (curls, file);
         m.calculate();
-        
-        /*
-        
         CheckkingURL();
-        System.out.println("------------------------------------------------------------------------------------------------------");
-		CountPlayer();
-        System.out.println("-----------------------------------------------------------------------------------------------------");
-		jointables();
-		showStatistic();
-        System.out.println("-----------------------------------------------------------------------------------------------------");
-		playersfromKEDAH();
-        System.out.println("-----------------------------------------------------------------------------------------------------");
-		TOP3();
-        System.out.println("-----------------------------------------------------------------------------------------------------");
-		winningpoints();
-        System.out.println("-----------------------------------------------------------------------------------------------------");
-		PlayerResult();
-		*/
+        CountPlayer();
+        jointables();
+	showStatistic();
+	playersfromKEDAH();
+	TOP3();
+	winningpoints();
+	PlayerResult();
+		
 
 	}
 
