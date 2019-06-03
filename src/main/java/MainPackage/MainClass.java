@@ -32,19 +32,47 @@ public class MainClass{
 
 	public static void main(String[] args) throws IOException {
 		
-	Thread currThread = Thread.currentThread();
         file = new LogURL(new FileHandler("URLdoesntcontainplayers.log",true));
         SetProperties();
         Retrivedata();
-        System.out.println("-----------------------------------------------------------------------------------------------------");
         TotalPlayers m = new TotalPlayers (curls, file);
         m.calculate();
-        CheckkingURL();
+        try {
+	   new Thread(currentThread()).sleep(500);
+	} catch (InterruptedException e) {
+	   e.printStackTrace();
+	}        
+	CheckkingURL();
+	 try {
+	   new Thread(currentThread()).sleep(3000);
+	} catch (InterruptedException e) {
+	   e.printStackTrace();
+	}   
         CountPlayer();
+	 try {
+	   new Thread(currentThread()).sleep(500);
+	} catch (InterruptedException e) {
+	   e.printStackTrace();
+	}   
         jointables();
 	showStatistic();
+	try {
+	   new Thread(currentThread()).sleep(3000);
+	} catch (InterruptedException e) {
+	   e.printStackTrace();
+	}   
 	playersfromKEDAH();
+	 try {
+	   new Thread(currentThread()).sleep(3000);
+	} catch (InterruptedException e) {
+	   e.printStackTrace();
+	}   
 	TOP3();
+	 try {
+	   new Thread(currentThread()).sleep(3000);
+	} catch (InterruptedException e) {
+	   e.printStackTrace();
+	}   
 	winningpoints();
 	PlayerResult();
 		
